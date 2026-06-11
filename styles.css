@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    border-bottom: 1px solid #30363d;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #58a6ff;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.header-subtitle {
+    font-size: 1.1em;
+    color: #8b949e;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ==================== MAIN CONTAINER ==================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #30363d;
+}
+
+/* ==================== PROJECTS GRID ==================== */
+.projects-section {
+    margin-bottom: 60px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+}
+
+/* ==================== PROJECT CARDS ==================== */
+.project-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    background-color: #0d1117;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+.project-card-header {
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #58a6ff;
+    margin: 0;
+}
+
+.project-description {
+    color: #8b949e;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.project-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    padding: 10px 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.btn-primary {
+    background-color: #58a6ff;
+    color: #0d1117;
+    border-color: #58a6ff;
+}
+
+.btn-primary:hover {
+    background-color: #79c0ff;
+    border-color: #79c0ff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #58a6ff;
+    border-color: #58a6ff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(88, 166, 255, 0.1);
+}
+
+/* ==================== MODAL OVERLAY ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==================== MODAL CONTENT ==================== */
+.project-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 96px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px;
+    border-bottom: 1px solid #30363d;
+    gap: 16px;
+}
+
+.modal-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #58a6ff;
+    margin: 0;
+    flex: 1;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #8b949e;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    color: #c9d1d9;
+    transform: scale(1.15);
+}
+
+.modal-content {
+    padding: 32px;
+}
+
+/* ==================== MODAL SECTIONS ==================== */
+.modal-section {
+    margin-bottom: 32px;
+}
+
+.modal-section:last-child {
+    margin-bottom: 0;
+}
+
+.modal-section-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #58a6ff;
+    margin-bottom: 12px;
+}
+
+.modal-section-text {
+    color: #c9d1d9;
+    line-height: 1.7;
+    font-size: 0.95em;
+}
+
+.modal-challenges-list {
+    color: #c9d1d9;
+}
+
+.modal-challenges-list p {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+/* ==================== SCROLLBAR ==================== */
+.project-modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+.project-modal::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+.project-modal::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 6px;
+}
+
+.project-modal::-webkit-scrollbar-thumb:hover {
+    background: #58a6ff;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.2em;
+    }
+
+    .header-subtitle {
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .modal-header {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .modal-title {
+        font-size: 1.4em;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-section {
+        margin-bottom: 20px;
+    }
+
+    .project-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+

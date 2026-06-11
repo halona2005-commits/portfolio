@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halona Ann Siju — Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            padding: 16px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-logo:hover {
+            color: #79c0ff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #58a6ff;
+        }
+
+        .nav-link.active {
+            color: #58a6ff;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 4px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .page-header {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            color: #f0f6fc;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 1.05em;
+            color: #8b949e;
+            max-width: 820px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            font-weight: 600;
+            color: #f0f6fc;
+            margin-bottom: 28px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .skill-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+        }
+
+        .skill-card h3 {
+            font-size: 1.05em;
+            font-weight: 600;
+            color: #58a6ff;
+            margin-bottom: 18px;
+        }
+
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 14px;
+            color: #58a6ff;
+            background-color: rgba(88, 166, 255, 0.1);
+            border: 1px solid #30363d;
+            border-radius: 999px;
+            font-size: 0.9em;
+            margin: 6px 6px 0 0;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .skill-pill:hover {
+            background-color: rgba(88, 166, 255, 0.18);
+            border-color: #58a6ff;
+        }
+
+        footer {
+            padding: 36px 20px;
+            text-align: center;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            background-color: #0d1117;
+        }
+
+        .footer-text {
+            margin-bottom: 8px;
+            font-size: 0.92em;
+        }
+
+        @media (max-width: 900px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .page-header {
+                padding-top: 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5em;
+            }
+
+            .skill-pill {
+                margin: 6px 4px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Halona Ann Siju</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="page-header">
+            <h1>Technical Toolbox</h1>
+            <p>A clean collection of the systems, languages, and emerging technologies I use to build modern software and intelligent experiences.</p>
+        </section>
+
+        <section class="section">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <div class="skill-pill">Java</div>
+                    <div class="skill-pill">Python</div>
+                    <div class="skill-pill">C</div>
+                    <div class="skill-pill">C++</div>
+                    <div class="skill-pill">HTML/CSS</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Systems &amp; Tools</h3>
+                    <div class="skill-pill">Git</div>
+                    <div class="skill-pill">GitHub</div>
+                    <div class="skill-pill">Android Studio</div>
+                    <div class="skill-pill">VS Code</div>
+                    <div class="skill-pill">Jupyter Notebook</div>
+                    <div class="skill-pill">DBMS</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Core Architecture</h3>
+                    <div class="skill-pill">Data Structures</div>
+                    <div class="skill-pill">Object-Oriented Programming</div>
+                    <div class="skill-pill">Data Pipelines</div>
+                    <div class="skill-pill">Algorithmic Sorting</div>
+                    <div class="skill-pill">Behavioral Analytics</div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Emerging Tech</h3>
+                    <div class="skill-pill">Prompt Engineering</div>
+                    <div class="skill-pill">Generative AI Layouts</div>
+                    <div class="skill-pill">Machine Learning Classification</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-text">© 2026 Halona Ann Siju. All rights reserved.</div>
+        <div class="footer-text">Built with a premium Git-style dark aesthetic and clean HTML/CSS.</div>
+    </footer>
+</body>
+</html>
