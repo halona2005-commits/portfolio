@@ -141,10 +141,18 @@
             flex: 1;
         }
 
+        .project-subtitle {
+            font-size: 0.82em;
+            color: #8b949e;
+            font-style: italic;
+            margin-top: -8px;
+        }
+
         .project-buttons {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .btn-repo {
@@ -178,6 +186,18 @@
 
         .btn-demo:hover {
             background-color: rgba(52, 168, 83, 0.25);
+        }
+
+        .badge-patent {
+            background-color: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .project-description {
@@ -460,16 +480,19 @@
                         <h3 class="project-title">ZeroNet Control</h3>
                         <div class="project-buttons">
                             <a href="https://github.com/halona2005-commits/zeronetcontrol" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
+                            <span class="badge-patent" title="Application No: 202541112551 A">Patent Published</span>
                         </div>
                     </div>
+                    <div class="project-subtitle">Indian Patent Application No: 202541112551 A (Pub: Dec 2025)</div>
                     <ul class="project-bullets">
-                        <li>Developed an internet-independent remote mobile access framework over local network layers.</li>
-                        <li>Managed full system architecture life cycle.</li>
+                        <li>Co-invented an offline-first mobile security architecture designed to secure Android devices via authenticated SMS commands over GSM networks.</li>
+                        <li>Integrated multi-layered execution modules including SIM-change monitoring, automated position retrieval, and remote data-wiping actions.</li>
                     </ul>
                     <div class="project-tags">
                         <span class="tag">Java</span>
                         <span class="tag">Android Studio</span>
-                        <span class="tag">Local Networking</span>
+                        <span class="tag">GSM / SMS Networking</span>
+                        <span class="tag">Mobile Security</span>
                     </div>
                     <div class="project-actions">
                         <button class="btn btn-primary" onclick="openModal('zeronet')">Read Deep Dive</button>
@@ -540,8 +563,8 @@
     </div>
 
     <footer>
-        <div class="footer-text">© 2026 Halona Ann Siju. All rights reserved.</div>
-        <div class="footer-text">Built with a premium Git-style dark aesthetic and clean HTML/CSS.</div>
+        <div class="footer-text">GitHub • LinkedIn • Email</div>
+        <div class="footer-text"></div>© 2026 Halona Ann Siju Designed & Developed by Halona Ann Siju</div>
     </footer>
 
     <script>
@@ -552,9 +575,9 @@
                 challenges: 'Enforcing data immutability over offline vectors using strict validation check-filters.'
             },
             'zeronet': {
-                title: 'ZeroNet Control',
-                architecture: 'Low-level dedicated socket channels running native Java threads.',
-                challenges: 'Overcoming device drops and variable local router bottlenecks through asynchronous tracking state engines.'
+                title: 'ZeroNet Control (Patent App: 202541112551 A)',
+                architecture: 'A hardware-independent, offline security framework that utilizes standard GSM networks to transmit authenticated SMS payloads. Includes a custom command-processing engine designed to handle incoming structural strings without an internet connection stack.',
+                challenges: 'Securing administrative mobile remote access pipelines in zero-connectivity environments, overcoming active network drops through specialized SIM-change monitoring validation rules, and minimizing footprint overhead for background execution on Android.'
             },
             'runs-ranker': {
                 title: 'India Runs Ranker',
