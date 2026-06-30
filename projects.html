@@ -540,6 +540,32 @@
                         <button class="btn btn-primary" onclick="openModal('learning-detection')">Read Deep Dive</button>
                     </div>
                 </div>
+
+                <div class="project-card" data-project="facemask-detection">
+                    <div class="project-card-top">
+                        <h3 class="project-title">Face Mask Detection with Live Alert System</h3>
+                        <div class="project-buttons">
+                            <a href="https://github.com/halona2005-commits/face-mask-detection" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
+                        </div>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Built a real-time face mask detector achieving 99.4% accuracy using transfer learning with MobileNetV2 on 7,553 images.</li>
+                        <li>Engineered a live alert pipeline with visual/audio notifications, CSV violation logging, and automated snapshot capture.</li>
+                        <li>Developed a Flask web dashboard with MJPEG video streaming and a real-time stats API.</li>
+                        <li>Optimized the inference pipeline from 10.7 to 69.5 FPS, a 549% speed improvement on CPU.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">MobileNetV2</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn btn-primary" onclick="openModal('facemask-detection')">Read Deep Dive</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -588,6 +614,11 @@
                 title: 'Learning Style Detection',
                 architecture: 'Behavior tracking scoring trees classifying user interaction personas.',
                 challenges: 'Streamlining feature arrays to drastically minimize device memory footprints.'
+            },
+            'facemask-detection': {
+                title: 'Face Mask Detection with Live Alert System',
+                architecture: 'Transfer learning pipeline using a frozen MobileNetV2 base with a custom classification head (Dense + Dropout + Softmax). OpenCV DNN handles per-frame face detection; each cropped face is preprocessed via MobileNetV2 preprocess_input and classified in real time. A Flask backend streams the annotated feed over MJPEG and exposes a JSON stats endpoint polled every second by the dashboard frontend.',
+                challenges: 'MobileNetV2 expects pixel values scaled to -1 to 1 via preprocess_input — using a standard divide-by-255 normalization caused the model to plateau at 50% accuracy, indistinguishable from random guessing. Correcting this single preprocessing step raised accuracy to 99.4%. Also resolved a class-label ordering mismatch between training and evaluation that was silently mapping every prediction to one class.'
             }
         };
 
