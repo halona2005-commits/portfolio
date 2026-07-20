@@ -200,6 +200,18 @@
             text-transform: uppercase;
         }
 
+        .badge-hackathon {
+            background-color: rgba(88, 166, 255, 0.15);
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         .project-description {
             color: #8b949e;
             font-size: 0.95em;
@@ -452,6 +464,35 @@
 
         <section class="projects-section">
             <div class="projects-grid">
+                <div class="project-card" data-project="legalsaathi">
+                    <div class="project-card-top">
+                        <h3 class="project-title">LegalSaathi — AI Legal Aid Agent</h3>
+                        <div class="project-buttons">
+                            <a href="https://github.com/halona2005-commits/LegalSaathi" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
+                            <span class="badge-hackathon" title="HiDevs × Mastra AI Agent Builder Hackathon">Hackathon Build</span>
+                        </div>
+                    </div>
+                    <div class="project-subtitle">HiDevs × Mastra AI Agent Builder Hackathon — TypeScript-native multi-agent system</div>
+                    <ul class="project-bullets">
+                        <li>Designed and shipped a multi-agent AI legal assistant for rural India, helping users understand legal rights, government welfare schemes, and draft RTI applications in English, Hindi, and Kannada.</li>
+                        <li>Built a Mastra-based orchestration pipeline — a Supervisor Agent routes every query through an Intent Router to one of three specialist agents: Scheme Agent, Legal Agent, and Document Agent.</li>
+                        <li>Implemented retrieval-augmented generation with Qdrant, grounding every scheme and legal answer in verified source documents instead of the model's memory, with agents explicitly declining to answer when no match is found.</li>
+                        <li>Integrated Enkrypt AI as an independent safety layer, screening agent output for hallucinations and PII exposure before it reaches the user.</li>
+                        <li>Deployed a working full-stack system end-to-end — Mastra backend on Railway, Next.js frontend on Vercel — with confirmed live multilingual routing across English, Hindi, and Kannada test queries.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Mastra</span>
+                        <span class="tag">Qdrant</span>
+                        <span class="tag">Enkrypt AI</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Next.js</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn btn-primary" onclick="openModal('legalsaathi')">Read Deep Dive</button>
+                    </div>
+                </div>
+
                 <div class="project-card" data-project="qr-system">
                     <div class="project-card-top">
                         <h3 class="project-title">Offline QR Verification System</h3>
@@ -595,6 +636,11 @@
 
     <script>
         const projectsData = {
+            'legalsaathi': {
+                title: 'LegalSaathi — AI Legal Aid Agent (HiDevs × Mastra Hackathon)',
+                architecture: 'A layered multi-agent system built on Mastra. A Supervisor Agent receives every user query and delegates to an Intent Router Agent, which classifies intent (scheme, legal, document, or general) and detected language, returning structured JSON. Based on that classification, the query is routed to a specialist: Scheme Agent or Legal Agent, each of which first calls a shared Qdrant search tool against a dedicated collection (government schemes, or IPC/CrPC/BNS and land law) before generating a response, so answers are grounded in retrieved source material rather than the model\'s parametric memory. If no relevant match is found, the agent explicitly says so rather than guessing. Every response passes through Enkrypt AI as an independent safety layer before reaching the user. The backend (Mastra, TypeScript) is deployed on Railway; the frontend (Next.js 16, Tailwind) is deployed on Vercel.',
+                challenges: 'Getting the Intent Router to reliably return clean, parseable JSON (no markdown fences or preamble) required explicit prompt constraints plus a fallback parser that defaults to a general-query classification rather than crashing the pipeline. In production, a browser Web Speech API type error surfaced only under Next.js\'s strict build-time type checking (not local dev), requiring a custom TypeScript declaration file. A leftover duplicate API route that incorrectly imported a backend-only module directly into the frontend caused repeated deployment failures until traced and removed. Gemini\'s free-tier rate limit (20 requests/minute, since each query triggers multiple internal LLM calls for intent classification, embedding, and generation) required careful request pacing during testing and demo recording.'
+            },
             'qr-system': {
                 title: 'Offline QR Verification System',
                 architecture: 'Decentralized signature processing mapped to a localized JSON schema.',

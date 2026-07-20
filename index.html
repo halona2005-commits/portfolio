@@ -72,19 +72,20 @@
         }
 
         .main-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px 80px;
+            .main-container{
+                width:100%;
+                max-width:1600px;
+                margin:auto;
+                padding:0 60px 80px;
+            }
         }
 
         /* Optimized 3-Column Grid for Copy, Terminal, and Portrait Photo */
         .hero {
-            display: grid;
-            grid-template-columns: 1.2fr 0.9fr 0.9fr;
-            gap: 30px;
-            align-items: center;
-            margin-bottom: 60px;
-            padding-top: 45px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            min-height:90vh;
         }
 
         .hero-copy h1 {
@@ -98,8 +99,8 @@
         /* Personal Portrait Graphic Wrapper with Pulse Animation */
         .portrait-container {
             width: 100%;
-            max-width:320px;
-            height:380px;
+            max-width:420px;
+            height:530px;
             border-radius: 16px;
             border: 1px solid #30363d;
             overflow: hidden;
@@ -507,13 +508,11 @@
             </p>
 
             <p style="color:#8b949e; margin-bottom:14px; font-size:1rem;">
-                Java Developer • AI/ML Enthusiast • Software Engineering Student
+                Java Developer • AI Engineer • Full Stack Developer
             </p>
 
-            <h1>
-                Building scalable software systems,
-                AI-powered applications,
-                and offline-first experiences.
+           <h1>
+                Turning ideas into intelligent software through Java, AI, and innovation.
             </h1>
 
             <div style="display:flex; gap:16px; margin-top:28px; flex-wrap:wrap;">
@@ -582,12 +581,13 @@
         <h2>About Halona</h2>
 
         <p>
-            Computer Science Engineering student passionate about
-            software development, backend systems, AI-driven
-            applications, and offline-first technologies.
-            Experienced in Java development, project leadership,
-            event coordination, and building practical solutions
-            through academic and independent projects.
+            <p>
+                I'm a Computer Science Engineering student passionate about building
+                software that solves real-world problems. My interests span Java
+                development, AI/ML, full-stack web development, and intelligent
+                applications. I enjoy transforming ideas into scalable, user-focused
+                solutions while continuously learning modern technologies.
+</p>
         </p>
     </section>
 
@@ -685,6 +685,13 @@
                 🏆 Hackverse Participant
                 <span class="cert-meta">
                     College Hackathon
+                </span>
+            </div>
+
+            <div class="cert-item">
+                🏆 HiDevs × Mastra AI Agent Builder Hackathon Participant
+                <span class="cert-meta">
+                    Built LegalSaathi — a multi-agent AI legal aid system
                 </span>
             </div>
 
