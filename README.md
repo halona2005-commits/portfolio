@@ -6,14 +6,6 @@ Welcome to the repository for my personal portfolio website. This site showcases
 
 ---
 
-## ⚡ Deployment & Hosting
-
-* **Hosted on:** [Vercel](https://vercel.com/)
-* **Deployment Strategy:** Continuous Deployment (CD) via GitHub integration. Any changes pushed to the `main` branch automatically build and update the live production site instantly.
-* **Availability:** Configured via Vercel's Edge Network to ensure 24/7 uptime with zero server sleep cycles or cold starts.
-
----
-
 ## 📂 Key Pages
 
 * `index.html` - The landing homepage introducing who I am.
