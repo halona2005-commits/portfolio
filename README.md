@@ -2,7 +2,7 @@
 
 Welcome to the repository for my personal portfolio website. This site showcases my background, technical skill set, and the projects I have built. 
 
-✨ **Live Demo:** [portfolio-one-inky-u2t53xdx8j.vercel.app](https://portfolio-one-inky-u2t53xdx8j.vercel.app/)
+✨ **Live Demo:** [portfolio](https://halona2005-commits.github.io/portfolio/)
 
 ---
 
