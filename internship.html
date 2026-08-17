@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halona Ann Siju — Internship</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                         Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            padding: 16px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .nav-link:hover {
+            color: #58a6ff;
+        }
+
+        .nav-link.active {
+            color: #58a6ff;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 4px;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .page-header {
+            padding: 70px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 3em;
+            color: #f0f6fc;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: #8b949e;
+            font-size: 1.05em;
+        }
+
+        .internship-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .internship-title {
+            color: #58a6ff;
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+
+        .internship-company {
+            color: #f0f6fc;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+
+        .internship-duration {
+            color: #8b949e;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #58a6ff;
+            font-size: 1.1em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .internship-card p {
+            color: #c9d1d9;
+            line-height: 1.8;
+        }
+
+        .internship-card ul {
+            padding-left: 20px;
+            color: #c9d1d9;
+        }
+
+        .internship-card li {
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background-color: rgba(88, 166, 255, 0.12);
+            color: #58a6ff;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.85em;
+            border: 1px solid #30363d;
+        }
+
+        footer {
+            padding: 36px 20px;
+            text-align: center;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+        }
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header {
+                padding-top: 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2.3em;
+            }
+
+            .internship-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                Halona Ann Siju
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="internship.html" class="nav-link"> Internship</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact </a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="main-container">
+
+        <section class="page-header">
+            <h1>Internship</h1>
+
+            <p>
+                My experience working on practical Artificial Intelligence
+                and Machine Learning applications.
+            </p>
+        </section>
+
+
+        <section class="internship-card">
+
+            <h2 class="internship-title">
+                AI/ML Intern
+            </h2>
+
+            <div class="internship-company">
+                Elevate Labs
+            </div>
+
+            <div class="internship-duration">
+                May 2026 – July 2026
+            </div>
+
+
+            <h3 class="section-title">
+                About the Internship
+            </h3>
+
+            <p>
+                Completed an AI/ML internship focused on developing
+                practical machine learning solutions, working with
+                computer vision, model development, and performance
+                optimization.
+            </p>
+
+
+            <h3 class="section-title">
+                Project
+            </h3>
+
+            <p>
+                <strong>Face Mask Detection with Live Alert System</strong>
+            </p>
+
+            <ul>
+                <li>
+                    Developed a real-time face mask detection system
+                    using Python, TensorFlow, OpenCV, and Flask.
+                </li>
+
+                <li>
+                    Used MobileNetV2 transfer learning for image
+                    classification.
+                </li>
+
+                <li>
+                    Achieved 99.4% accuracy on 7,553 images.
+                </li>
+
+                <li>
+                    Improved inference speed from 10.7 FPS to
+                    69.5 FPS, achieving a 549% improvement.
+                </li>
+            </ul>
+
+
+            <h3 class="section-title">
+                Technologies
+            </h3>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">Flask</span>
+                <span class="tag">MobileNetV2</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Computer Vision</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        © 2026 Halona Ann Siju
+    </footer>
+
+</body>
+</html>
