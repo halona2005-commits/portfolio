@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | Halona Ann Siju</title>
+    <title>Experience | Halona Ann Siju</title>
 
     <style>
 
@@ -152,7 +152,7 @@
         ========================================================= */
 
         .page-header {
-            margin-bottom: 65px;
+            margin-bottom: 70px;
 
             max-width: 760px;
         }
@@ -205,7 +205,7 @@
         ========================================================= */
 
         .section {
-            margin-bottom: 65px;
+            margin-bottom: 80px;
         }
 
 
@@ -252,30 +252,17 @@
 
 
         /* =========================================================
-           CONTACT GRID
+           EXPERIENCE CARD
         ========================================================= */
 
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 15px;
-        }
-
-
-        /* =========================================================
-           CONTACT CARD
-        ========================================================= */
-
-        .contact-card {
+        .experience-card {
             background: var(--bg-card);
 
             border: 1px solid var(--border-color);
 
             border-radius: 8px;
 
-            padding: 25px;
+            padding: 32px;
 
             position: relative;
 
@@ -287,7 +274,7 @@
         }
 
 
-        .contact-card::before {
+        .experience-card::before {
             content: "";
 
             position: absolute;
@@ -306,23 +293,23 @@
         }
 
 
-        .contact-card:hover {
+        .experience-card:hover {
             border-color: var(--accent-blue);
 
             transform: translateY(-3px);
         }
 
 
-        .contact-card:hover::before {
+        .experience-card:hover::before {
             opacity: 1;
         }
 
 
         /* =========================================================
-           CONTACT CARD CONTENT
+           EXPERIENCE HEADER
         ========================================================= */
 
-        .contact-card-number {
+        .experience-number {
             color: var(--accent-blue);
 
             font-size: 0.72rem;
@@ -335,140 +322,205 @@
         }
 
 
-        .contact-card h3 {
+        .experience-title {
             color: var(--text-header);
 
-            font-size: 1.05rem;
+            font-size: 1.45rem;
 
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
 
-        .contact-card p {
+        .experience-company {
+            color: var(--accent-blue);
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+
+        .experience-duration {
             color: var(--text-muted);
 
-            font-size: 0.86rem;
+            font-size: 0.85rem;
 
-            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================================================
+           EXPERIENCE CONTENT
+        ========================================================= */
+
+        .experience-section {
+            margin-top: 28px;
+        }
+
+
+        .experience-section:first-of-type {
+            margin-top: 0;
+        }
+
+
+        .experience-section-title {
+            color: var(--text-header);
+
+            font-size: 0.98rem;
 
             margin-bottom: 12px;
         }
 
 
-        .contact-link {
-            display: inline-block;
+        .experience-section p {
+            color: var(--text-muted);
 
+            font-size: 0.9rem;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           PROJECT
+        ========================================================= */
+
+        .project-name {
             color: var(--accent-blue);
 
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+        }
+
+
+        .experience-list {
+            padding-left: 20px;
+
+            color: var(--text-body);
+
             font-size: 0.88rem;
-
-            font-weight: 500;
-
-            word-break: break-word;
-
-            transition: color 0.2s ease;
         }
 
 
-        .contact-link:hover {
-            color: var(--accent-blue-hover);
+        .experience-list li {
+            margin-bottom: 11px;
 
-            text-decoration: underline;
+            line-height: 1.75;
         }
 
 
-        /* =========================================================
-           LOCATION CARD
-        ========================================================= */
-
-        .location-card {
-            grid-column: span 2;
+        .experience-list li::marker {
+            color: var(--accent-blue);
         }
 
 
         /* =========================================================
-           CTA
+           TECHNOLOGIES
         ========================================================= */
 
-        .cta {
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-top: 15px;
+        }
+
+
+        .tag {
+            background: var(--bg-primary);
+
+            color: var(--text-body);
+
+            padding: 6px 11px;
+
+            border-radius: 5px;
+
+            font-size: 0.75rem;
+
+            border: 1px solid var(--border-color);
+
+            transition:
+                color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .tag:hover {
+            color: var(--accent-blue);
+
+            border-color: var(--accent-blue);
+        }
+
+
+        /* =========================================================
+           EXPERIENCE HIGHLIGHTS
+        ========================================================= */
+
+        .highlight-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .highlight-card {
             background: var(--bg-card);
 
             border: 1px solid var(--border-color);
 
             border-radius: 8px;
 
-            padding: 38px;
+            padding: 22px;
 
-            text-align: center;
-
-            position: relative;
-
-            overflow: hidden;
+            transition:
+                border-color 0.25s ease,
+                transform 0.25s ease;
         }
 
 
-        .cta::before {
-            content: "";
+        .highlight-card:hover {
+            border-color: var(--accent-blue);
 
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 2px;
-
-            background: var(--accent-blue);
+            transform: translateY(-3px);
         }
 
 
-        .cta h2 {
-            color: var(--text-header);
+        .highlight-number {
+            color: var(--accent-blue);
 
-            font-size: 1.7rem;
-
-            margin-bottom: 10px;
-        }
-
-
-        .cta p {
-            color: var(--text-muted);
-
-            max-width: 650px;
-
-            margin: 0 auto 24px;
-
-            font-size: 0.92rem;
-
-            line-height: 1.8;
-        }
-
-
-        .cta-button {
-            display: inline-block;
-
-            background: var(--accent-blue);
-
-            color: var(--bg-primary);
-
-            padding: 11px 24px;
-
-            border-radius: 6px;
-
-            font-size: 0.88rem;
+            font-size: 1.5rem;
 
             font-weight: 700;
 
-            transition:
-                background-color 0.2s ease,
-                transform 0.2s ease;
+            margin-bottom: 7px;
         }
 
 
-        .cta-button:hover {
-            background: var(--accent-blue-hover);
+        .highlight-card h3 {
+            color: var(--text-header);
 
-            transform: translateY(-2px);
+            font-size: 0.95rem;
+
+            margin-bottom: 6px;
+        }
+
+
+        .highlight-card p {
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+
+            line-height: 1.6;
         }
 
 
@@ -626,13 +678,8 @@
             }
 
 
-            .contact-grid {
+            .highlight-grid {
                 grid-template-columns: 1fr;
-            }
-
-
-            .location-card {
-                grid-column: span 1;
             }
 
         }
@@ -670,33 +717,18 @@
             }
 
 
+            .experience-card {
+                padding: 24px;
+            }
+
+
             .section {
-                margin-bottom: 55px;
+                margin-bottom: 60px;
             }
 
 
             .section-header h2 {
                 font-size: 1.25rem;
-            }
-
-
-            .contact-card {
-                padding: 22px;
-            }
-
-
-            .cta {
-                padding: 30px 22px;
-            }
-
-
-            .page-navigation {
-                flex-direction: column;
-            }
-
-
-            .page-navigation .page-nav-link:last-child {
-                text-align: left !important;
             }
 
 
@@ -744,14 +776,14 @@
 
 
             <li>
-                <a href="experience.html">
+                <a href="experience.html" class="active">
                     Experience
                 </a>
             </li>
 
 
             <li>
-                <a href="contact.html" class="active">
+                <a href="contact.html">
                     Contact
                 </a>
             </li>
@@ -775,40 +807,36 @@
         <header class="page-header">
 
             <div class="page-number">
-                 CONTACT
+               EXPERIENCE
             </div>
 
 
             <h1>
-                Let's<br>
-                <span>connect</span>
+                Learning by<br>
+                <span>building</span>
             </h1>
 
 
             <p>
-                I’m actively seeking software engineering roles,
-                internships, and opportunities to collaborate on
-                meaningful technical projects. Feel free to reach out.
+                Practical experience through internships,
+                technical projects, research, hackathons,
+                and real-world software development.
             </p>
 
         </header>
 
 
         <!-- =====================================================
-             CONTACT DETAILS
+             INTERNSHIP
         ===================================================== -->
 
         <section class="section">
 
             <div class="section-header">
 
-                <div class="section-number">
-                    01
-                </div>
-
-
+            
                 <h2>
-                    Get in touch
+                    Internship
                 </h2>
 
 
@@ -817,204 +845,92 @@
             </div>
 
 
-            <div class="contact-grid">
+            <article class="experience-card">
 
 
-                <!-- LOCATION -->
-
-                <article class="contact-card location-card">
-
-                    <div class="contact-card-number">
-                        01 / LOCATION
-                    </div>
-
-
-                    <h3>
-                        Based in
-                    </h3>
-
-
-                    <p>
-                        Bangalore, Karnataka, India
-                    </p>
-
-                </article>
-
-
-                <!-- EMAIL -->
-
-                <article class="contact-card">
-
-                    <div class="contact-card-number">
-                        02 / EMAIL
-                    </div>
-
-
-                    <h3>
-                        Email
-                    </h3>
-
-
-                    <p>
-                        The easiest way to reach me directly.
-                    </p>
-
-
-                    <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=halona2005@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-link"
-                    >
-                        halona2005@gmail.com →
-                    </a>
-
-                </article>
-
-
-                <!-- PHONE -->
-
-                <article class="contact-card">
-
-                    <div class="contact-card-number">
-                        03 / PHONE
-                    </div>
-
-
-                    <h3>
-                        Phone
-                    </h3>
-
-
-                    <p>
-                        Available for professional discussions.
-                    </p>
-
-
-                    <a
-                        href="tel:+919686454419"
-                        class="contact-link"
-                    >
-                        +91 9686 454419
-                    </a>
-
-                </article>
-
-
-                <!-- LINKEDIN -->
-
-                <article class="contact-card">
-
-                    <div class="contact-card-number">
-                        04 / LINKEDIN
-                    </div>
-
-
-                    <h3>
-                        LinkedIn
-                    </h3>
-
-
-                    <p>
-                        Connect with me professionally.
-                    </p>
-
-
-                    <a
-                        href="https://linkedin.com/in/halona-ann-siju"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-link"
-                    >
-                        linkedin.com/in/halona-ann-siju →
-                    </a>
-
-                </article>
-
-
-                <!-- GITHUB -->
-
-                <article class="contact-card">
-
-                    <div class="contact-card-number">
-                        05 / GITHUB
-                    </div>
-
-
-                    <h3>
-                        GitHub
-                    </h3>
-
-
-                    <p>
-                        Explore my projects and development work.
-                    </p>
-
-
-                    <a
-                        href="https://github.com/halona2005-commits"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-link"
-                    >
-                        github.com/halona2005-commits →
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CTA
-        ===================================================== -->
-
-        <section class="section">
-
-            <div class="section-header">
-
-                <div class="section-number">
-                    02
+                <div class="experience-number">
+                    01 / INTERNSHIP
                 </div>
 
 
-                <h2>
-                    Start a conversation
+                <h2 class="experience-title">
+                    AI / ML Intern
                 </h2>
 
 
-                <div class="section-line"></div>
-
-            </div>
-
-
-            <div class="cta">
-
-                <h2>
-                    Have a project or opportunity?
-                </h2>
+                <div class="experience-company">
+                    Elevate Labs
+                </div>
 
 
-                <p>
-                    Whether it is an internship, software engineering
-                    opportunity, technical collaboration, or an idea
-                    worth building, I’d be happy to hear from you.
-                </p>
+                <div class="experience-duration">
+                    May 2026 – July 2026
+                </div>
 
 
-                <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=halona2005@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cta-button"
-                >
-                    Send me an email →
-                </a>
+                <!-- ABOUT -->
 
-            </div>
+                <div class="experience-section">
 
+                    <h3 class="experience-section-title">
+                        About the Internship
+                    </h3>
+
+
+                    <p>
+                        Completed an AI/ML internship focused on
+                        developing practical machine learning
+                        solutions and gaining hands-on experience
+                        with computer vision, model development,
+                        and performance optimization.
+                    </p>
+
+                </div>
+
+
+                <!-- PROJECT -->
+
+                <div class="experience-section">
+
+                    <h3 class="experience-section-title">
+                        Project
+                    </h3>
+
+
+                    <div class="project-name">
+                        Face Mask Detection with Live Alert System
+                    </div>
+
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Developed a real-time face mask detection
+                            system using Python, TensorFlow, OpenCV,
+                            and Flask.
+                        </li>
+
+
+                        <li>
+                            Used MobileNetV2 transfer learning for
+                            image classification.
+                        </li>
+
+
+                        <li>
+                            Achieved 99.4% accuracy on 7,553 images.
+                        </li>
+
+
+                        <li>
+                            Improved inference speed from 10.7 FPS
+                            to 69.5 FPS, achieving a 549% improvement.
+                        </li>
+
+                    </ul>
+
+                </div>
+            </article>
         </section>
 
 
@@ -1026,29 +942,29 @@
 
 
             <a
-                href="experience.html"
+                href="projects.html"
                 class="page-nav-link"
             >
 
                 ← Previous
 
                 <strong>
-                    Experience
+                    Projects
                 </strong>
 
             </a>
 
 
             <a
-                href="index.html"
+                href="contact.html"
                 class="page-nav-link"
                 style="text-align: right;"
             >
 
-                Back to
+                Next
 
                 <strong>
-                    Home →
+                    Let's Connect →
                 </strong>
 
             </a>
@@ -1074,6 +990,7 @@
 
 
             <div class="social-links">
+
 
                 <a
                     href="https://github.com/halona2005-commits"

@@ -3,701 +3,1287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halona Ann Siju — Projects</title>
+
+    <title>Projects | Halona Ann Siju</title>
+
     <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-card: #161b22;
+
+            --text-header: #f0f6fc;
+            --text-body: #c9d1d9;
+            --text-muted: #8b949e;
+
+            --accent-blue: #58a6ff;
+            --accent-blue-hover: #79c0ff;
+
+            --border-color: #30363d;
+
+            --font-stack:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Helvetica,
+                Arial,
+                sans-serif;
+        }
+
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            font-family: var(--font-stack);
+            background-color: var(--bg-primary);
+            color: var(--text-body);
             line-height: 1.6;
         }
 
-        nav {
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .navbar {
             position: sticky;
             top: 0;
-            background-color: #0d1117;
-            border-bottom: 1px solid #30363d;
-            padding: 16px 0;
-            z-index: 100;
+            z-index: 1000;
+
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(13, 17, 23, 0.92);
+
+            border-bottom: 1px solid var(--border-color);
+
+            backdrop-filter: blur(12px);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
         .nav-logo {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #58a6ff;
-            text-decoration: none;
-            transition: color 0.2s ease;
+            font-size: 1.05rem;
+            font-weight: 700;
+
+            color: var(--text-header);
+
+            letter-spacing: 0.5px;
+
+            white-space: nowrap;
+
+            transition: color 0.25s ease;
         }
 
+
         .nav-logo:hover {
-            color: #79c0ff;
+            color: var(--accent-blue);
         }
+
 
         .nav-links {
             display: flex;
+            align-items: center;
+
+            gap: 30px;
+
             list-style: none;
-            gap: 32px;
         }
 
-        .nav-link {
-            color: #c9d1d9;
-            text-decoration: none;
-            font-size: 0.95em;
-            transition: color 0.2s ease;
+
+        .nav-links a {
+            color: var(--text-muted);
+
+            font-size: 0.92rem;
+
+            transition: color 0.25s ease;
         }
 
-        .nav-link:hover {
-            color: #58a6ff;
+
+        .nav-links a:hover {
+            color: var(--text-header);
         }
 
-        .nav-link.active {
-            color: #58a6ff;
-            border-bottom: 2px solid #58a6ff;
-            padding-bottom: 4px;
+
+        .nav-links a.active {
+            color: var(--accent-blue);
         }
 
-        .main-container {
-            max-width: 1200px;
+
+        /* =========================================================
+           PAGE CONTAINER
+        ========================================================= */
+
+        .container {
+            width: min(1050px, 86%);
+
             margin: 0 auto;
-            padding: 0 20px 80px;
+
+            padding: 80px 0 110px;
         }
+
+
+        /* =========================================================
+           PAGE HEADER
+        ========================================================= */
 
         .page-header {
-            padding: 80px 0 40px;
-            text-align: center;
-            border-bottom: 1px solid #30363d;
-            margin-bottom: 40px;
+            margin-bottom: 70px;
+
+            max-width: 760px;
         }
+
+
+        .page-number {
+            color: var(--accent-blue);
+
+            font-size: 0.78rem;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
+        }
+
 
         .page-header h1 {
-            font-size: 3em;
-            font-weight: 700;
-            color: #f0f6fc;
-            margin-bottom: 16px;
+            color: var(--text-header);
+
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 22px;
         }
 
+
+        .page-header h1 span {
+            color: var(--accent-blue);
+        }
+
+
         .page-header p {
-            font-size: 1.05em;
-            color: #8b949e;
-            max-width: 820px;
-            margin: 0 auto;
+            color: var(--text-muted);
+
+            font-size: 1.08rem;
+
             line-height: 1.8;
         }
 
-        .projects-section {
-            margin-bottom: 40px;
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+            margin-bottom: 80px;
         }
+
+
+        .section-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .section-number {
+            color: var(--accent-blue);
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .section-header h2 {
+            color: var(--text-header);
+
+            font-size: 1.6rem;
+
+            letter-spacing: -0.5px;
+
+            white-space: nowrap;
+        }
+
+
+        .section-line {
+            height: 1px;
+
+            flex: 1;
+
+            background: var(--border-color);
+        }
+
+
+        /* =========================================================
+           PROJECT GRID
+        ========================================================= */
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 16px;
         }
+
+
+        /* =========================================================
+           PROJECT CARD
+        ========================================================= */
 
         .project-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            background: var(--bg-card);
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 8px;
+
+            padding: 28px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                border-color 0.25s ease,
+                transform 0.25s ease;
         }
+
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 100%;
+
+            background: var(--accent-blue);
+
+            opacity: 0;
+
+            transition: opacity 0.25s ease;
+        }
+
 
         .project-card:hover {
-            border-color: #58a6ff;
-            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
-            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+
+            transform: translateY(-3px);
         }
 
-        .project-card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 12px;
-        }
 
-        .project-title {
-            font-size: 1.3em;
-            font-weight: 700;
-            color: #58a6ff;
-            margin: 0;
-            flex: 1;
-        }
-
-        .project-subtitle {
-            font-size: 0.82em;
-            color: #8b949e;
-            font-style: italic;
-            margin-top: -8px;
-        }
-
-        .project-buttons {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .btn-repo {
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid transparent;
-        }
-
-        .btn-code {
-            background-color: transparent;
-            color: #58a6ff;
-            border-color: #58a6ff;
-        }
-
-        .btn-code:hover {
-            background-color: rgba(88, 166, 255, 0.12);
-        }
-
-        .btn-demo {
-            background-color: rgba(52, 168, 83, 0.15);
-            color: #34a853;
-            border-color: #34a853;
-        }
-
-        .btn-demo:hover {
-            background-color: rgba(52, 168, 83, 0.25);
-        }
-
-        .badge-patent {
-            background-color: rgba(46, 204, 113, 0.15);
-            color: #2ecc71;
-            border: 1px solid #2ecc71;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.75em;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .badge-hackathon {
-            background-color: rgba(88, 166, 255, 0.15);
-            color: #58a6ff;
-            border: 1px solid #58a6ff;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.75em;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .project-description {
-            color: #8b949e;
-            font-size: 0.95em;
-            line-height: 1.7;
-            flex: 1;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background-color: rgba(88, 166, 255, 0.12);
-            color: #58a6ff;
-            padding: 6px 14px;
-            border-radius: 999px;
-            font-size: 0.85em;
-            border: 1px solid #30363d;
-        }
-
-        .project-actions {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn {
-            padding: 12px 18px;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #c9d1d9;
-            background-color: #161b22;
-            cursor: pointer;
-            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .btn:hover {
-            border-color: #58a6ff;
-            background-color: rgba(88, 166, 255, 0.08);
-        }
-
-        .btn-primary {
-            background-color: #58a6ff;
-            color: #0d1117;
-            border-color: #58a6ff;
-        }
-
-        .btn-primary:hover {
-            background-color: #79c0ff;
-            border-color: #79c0ff;
-        }
-
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(4px);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 999;
-        }
-
-        .modal-overlay.active {
+        .project-card:hover::before {
             opacity: 1;
-            visibility: visible;
         }
 
-        .project-modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 16px;
-            width: min(700px, calc(100% - 40px));
-            max-height: 85vh;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            box-shadow: 0 26px 90px rgba(0, 0, 0, 0.55);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-        }
 
-        .project-modal.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
-        }
+        /* =========================================================
+           PROJECT NUMBER
+        ========================================================= */
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 28px 28px 0;
-        }
+        .project-number {
+            color: var(--accent-blue);
 
-        .modal-title {
-            font-size: 1.7em;
+            font-size: 0.72rem;
+
             font-weight: 700;
-            color: #58a6ff;
-            margin: 0;
-            flex: 1;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 13px;
         }
 
-        .modal-close {
-            background: none;
-            border: none;
-            color: #8b949e;
-            font-size: 2em;
-            cursor: pointer;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.2s ease, transform 0.2s ease;
+
+        /* =========================================================
+           PROJECT TITLE
+        ========================================================= */
+
+        .project-card h3 {
+            color: var(--text-header);
+
+            font-size: 1.15rem;
+
+            margin-bottom: 8px;
         }
 
-        .modal-close:hover {
-            color: #c9d1d9;
-            transform: scale(1.12);
-        }
 
-        .modal-body {
-            padding: 24px 28px 28px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+        /* =========================================================
+           PROJECT TYPE
+        ========================================================= */
 
-        .modal-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .modal-section-title {
-            font-size: 1.05em;
-            font-weight: 600;
-            color: #58a6ff;
-        }
-
-        .modal-section-text {
-            color: #c9d1d9;
-            font-size: 0.96em;
-            line-height: 1.8;
-        }
-
-        .modal-section-text strong {
-            color: #f0f6fc;
-        }
-
-        .project-bullets {
-            list-style: none;
-            padding-left: 0;
-            display: grid;
-            gap: 10px;
-            color: #c9d1d9;
-            font-size: 0.95em;
-            line-height: 1.7;
-        }
-
-        .project-bullets li::before {
-            content: '▹';
-            color: #58a6ff;
+        .project-type {
             display: inline-block;
-            width: 1rem;
+
+            color: var(--accent-blue);
+
+            font-size: 0.7rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
         }
+
+
+        /* =========================================================
+           PROJECT DESCRIPTION
+        ========================================================= */
+
+        .project-card p {
+            color: var(--text-muted);
+
+            font-size: 0.88rem;
+
+            line-height: 1.75;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================================================
+           PROJECT HIGHLIGHT
+        ========================================================= */
+
+        .project-highlight {
+            background: var(--bg-primary);
+
+            border-left: 3px solid var(--accent-blue);
+
+            padding: 11px 13px;
+
+            margin-bottom: 18px;
+
+            color: var(--text-body);
+
+            font-size: 0.78rem;
+
+            line-height: 1.6;
+        }
+
+
+        .project-highlight strong {
+            color: var(--text-header);
+        }
+
+
+        /* =========================================================
+           TECH STACK
+        ========================================================= */
+
+        .project-tech {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .tech-pill {
+            background: var(--bg-primary);
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 5px;
+
+            padding: 5px 9px;
+
+            color: var(--text-body);
+
+            font-size: 0.72rem;
+
+            transition:
+                color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .tech-pill:hover {
+            color: var(--accent-blue);
+
+            border-color: var(--accent-blue);
+        }
+
+
+        /* =========================================================
+           GITHUB LINK
+        ========================================================= */
+
+        .project-link {
+            display: inline-block;
+
+            color: var(--accent-blue);
+
+            font-size: 0.8rem;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .project-link:hover {
+            color: var(--accent-blue-hover);
+        }
+
+
+        /* =========================================================
+           PAGE NAVIGATION
+        ========================================================= */
+
+        .page-navigation {
+            border-top: 1px solid var(--border-color);
+
+            padding-top: 35px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .page-nav-link {
+            color: var(--text-muted);
+
+            font-size: 0.88rem;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .page-nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+
+        .page-nav-link strong {
+            display: block;
+
+            color: var(--text-header);
+
+            font-size: 1rem;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         footer {
-            padding: 36px 20px;
-            text-align: center;
-            color: #8b949e;
-            border-top: 1px solid #30363d;
-            background-color: #0d1117;
+            border-top: 1px solid var(--border-color);
+
+            padding: 32px 0;
+
+            color: var(--text-muted);
+
+            font-size: 0.82rem;
         }
 
-        .footer-text {
-            margin-bottom: 8px;
-            font-size: 0.92em;
+
+        .footer-content {
+            width: min(1050px, 86%);
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
         }
 
-        @media (max-width: 900px) {
+
+        .social-links {
+            display: flex;
+
+            gap: 20px;
+        }
+
+
+        .social-links a {
+            transition: color 0.2s ease;
+        }
+
+
+        .social-links a:hover {
+            color: var(--accent-blue);
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        .page-header,
+        .section {
+            animation: fadeUp 0.7s ease both;
+        }
+
+
+        .section:nth-child(2) {
+            animation-delay: 0.08s;
+        }
+
+
+        .section:nth-child(3) {
+            animation-delay: 0.16s;
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+
+            .nav-links {
+                gap: 15px;
+            }
+
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+
+            .container {
+                width: 90%;
+
+                padding-top: 60px;
+            }
+
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
         }
 
-        @media (max-width: 700px) {
-            .page-header {
-                padding-top: 40px;
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                height: auto;
+
+                min-height: 70px;
+
+                flex-wrap: wrap;
+
+                gap: 10px;
+
+                padding-top: 15px;
+
+                padding-bottom: 15px;
             }
 
-            .page-header h1 {
-                font-size: 2.5em;
+
+            .nav-logo {
+                font-size: 0.85rem;
             }
+
+
+            .nav-links {
+                gap: 9px;
+            }
+
+
+            .nav-links a {
+                font-size: 0.7rem;
+            }
+
 
             .project-card {
-                padding: 20px;
+                padding: 23px;
             }
 
-            .project-title {
-                font-size: 1.2em;
+
+            .section {
+                margin-bottom: 60px;
             }
 
-            .btn-repo {
-                padding: 7px 10px;
+
+            .section-header h2 {
+                font-size: 1.25rem;
             }
 
-            .modal-header,
-            .modal-body {
-                padding-left: 20px;
-                padding-right: 20px;
+
+            .footer-content {
+                width: 90%;
+
+                flex-direction: column;
+
+                text-align: center;
             }
 
-            .modal-title {
-                font-size: 1.45em;
-            }
         }
+
     </style>
 </head>
+
+
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Halona Ann Siju</a>
-            <ul class="nav-links">
-               <li><a href="index.html" class="nav-link">About</a></li>
-                <li><a href="skills.html" class="nav-link">Skills</a></li>
-                <li><a href="internship.html" class="nav-link">Internship</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact </a></li>
-            </ul>
-        </div>
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-logo">
+            HALONA ANN SIJU
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html" class="active">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="experience.html">
+                    Experience
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
     </nav>
 
-    <main class="main-container">
-        <section class="page-header">
-            <h1>Projects</h1>
-            <p>A curated list of projects that highlights web development, local networking, data processing, and machine learning design.</p>
-        </section>
 
-        <section class="projects-section">
-            <div class="projects-grid">
-                <div class="project-card" data-project="zeronet">
-                    <div class="project-card-top">
-                        <h3 class="project-title">ZeroNet Control</h3>
-                        <div class="project-buttons">
-                            <a href="https://github.com/halona2005-commits/zeronetcontrol" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
-                            <span class="badge-patent" title="Application No: 202541112551 A">Patent Published</span>
-                        </div>
-                    </div>
-                    <div class="project-subtitle">Indian Patent Application No: 202541112551 A (Pub: Dec 2025)</div>
-                    <ul class="project-bullets">
-                        <li>Co-invented an offline-first mobile security architecture designed to secure Android devices via authenticated SMS commands over GSM networks.</li>
-                        <li>Integrated multi-layered execution modules including SIM-change monitoring, automated position retrieval, and remote data-wiping actions.</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Android Studio</span>
-                        <span class="tag">GSM / SMS Networking</span>
-                        <span class="tag">Mobile Security</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-primary" onclick="openModal('zeronet')">Read Deep Dive</button>
-                    </div>
-                </div>
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================= -->
 
-                <div class="project-card" data-project="legalsaathi">
-                    <div class="project-card-top">
-                        <h3 class="project-title">LegalSaathi — AI Legal Aid Agent</h3>
-                        <div class="project-buttons">
-                            <a href="https://github.com/halona2005-commits/LegalSaathi" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
-                            <span class="badge-hackathon" title="HiDevs × Mastra AI Agent Builder Hackathon">Hackathon Build</span>
-                        </div>
-                    </div>
-                    <div class="project-subtitle">HiDevs × Mastra AI Agent Builder Hackathon — TypeScript-native multi-agent system</div>
-                    <ul class="project-bullets">
-    <li>Designed and shipped a multi-agent AI legal assistant for rural India, helping users understand legal rights, government welfare schemes, and draft RTI applications in English, Hindi, and Kannada.</li>
-    <li>Built a Mastra-based orchestration pipeline with retrieval-augmented generation via Qdrant — a Supervisor Agent routes queries through an Intent Router. Enkrypt AI safety layer before reaching the user.</li>
-</ul>
-                    <div class="project-tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Mastra</span>
-                        <span class="tag">Qdrant</span>
-                        <span class="tag">Enkrypt AI</span>
-                        <span class="tag">Gemini</span>
-                        <span class="tag">Next.js</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-primary" onclick="openModal('legalsaathi')">Read Deep Dive</button>
-                    </div>
-                </div>
+    <main class="container">
 
-                <div class="project-card" data-project="qr-system">
-                    <div class="project-card-top">
-                        <h3 class="project-title">Offline QR Verification System</h3>
-                        <div class="project-buttons">
-                            <a href="https://github.com/halona2005-commits/OfflineQRVerification" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
-                        </div>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Built a database-free verification framework using cryptographic digital signatures.</li>
-                        <li>Explored offline-first data integrity patterns.</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JSON Backend</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-primary" onclick="openModal('qr-system')">Read Deep Dive</button>
-                    </div>
-                </div>
 
-                <div class="project-card" data-project="runs-ranker">
-                    <div class="project-card-top">
-                        <h3 class="project-title">India Runs Ranker</h3>
-                        <div class="project-buttons">
-                            <a href="https://github.com/halona2005-commits/India-Runs-Ranker" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
-                        </div>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Built an automated sorting engine to process mass athletic performance logs.</li>
-                        <li>Engineered algorithmic passes for rapid ranking calculations.</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Data Ranking</span>
-                        <span class="tag">Algorithms</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-primary" onclick="openModal('runs-ranker')">Read Deep Dive</button>
-                    </div>
-                </div>
+        <!-- =====================================================
+             PAGE HEADER
+        ===================================================== -->
 
-                <div class="project-card" data-project="learning-detection">
-                    <div class="project-card-top">
-                        <h3 class="project-title">Learning Style Detection</h3>
-                        <div class="project-buttons">
-                            <a href="https://github.com/Haripriya-clou/Learning_Style_Detection" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
-                        </div>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Collaborated on a predictive system mapping user interaction matrices to cognitive profiles.</li>
-                        <li>Implemented lightweight logic branches to run locally.</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Behavioral Analytics</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-primary" onclick="openModal('learning-detection')">Read Deep Dive</button>
-                    </div>
-                </div>
+        <header class="page-header">
 
-                <div class="project-card" data-project="facemask-detection">
-                    <div class="project-card-top">
-                        <h3 class="project-title">Face Mask Detection with Live Alert System</h3>
-                        <div class="project-buttons">
-                            <a href="https://github.com/halona2005-commits/face-mask-detection" class="btn-repo btn-code" target="_blank" rel="noopener noreferrer">Code</a>
-                        </div>
-                    </div>
-                    <ul class="project-bullets">
-    <li>Built a real-time face mask detector achieving 99.4% accuracy using transfer learning with MobileNetV2 on 7,553 images.</li>
-    <li>Optimized the inference pipeline from 10.7 to 69.5 FPS, a 549% speed improvement on CPU, with a Flask web dashboard and live alert system.</li>
-</ul>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">MobileNetV2</span>
-                        <span class="tag">Computer Vision</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-primary" onclick="openModal('facemask-detection')">Read Deep Dive</button>
-                    </div>
-                </div>
+            <div class="page-number">
+                PROJECTS
             </div>
+
+
+            <h1>
+                Things I've<br>
+                <span>built</span>
+            </h1>
+
+
+            <p>
+                A collection of projects, hackathon builds,
+                and technical work that reflect my interests
+                in AI, cybersecurity, software development,
+                and problem solving.
+            </p>
+
+        </header>
+
+
+        <!-- =====================================================
+             PROJECTS
+        ===================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01
+                </span>
+
+
+                <h2>
+                    Projects
+                </h2>
+
+
+                <div class="section-line"></div>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- =================================================
+                     01 — ZERO NET CONTROL
+                ================================================= -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+
+                    <h3>
+                        ZeroNet Control
+                    </h3>
+
+
+                    <span class="project-type">
+                        Android Security Project
+                    </span>
+
+
+                    <p>
+                        An Android-based remote device management
+                        and security project designed to enable
+                        remote device control through SMS commands,
+                        without depending on an internet connection.
+                    </p>
+
+
+                    <div class="project-highlight">
+
+                        <strong>
+                            Indian Patent Application No:
+                            202541112551 A
+                        </strong>
+
+                        <br>
+
+                        Published: December 2025
+
+                    </div>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech-pill">
+                            Android
+                        </span>
+
+                        <span class="tech-pill">
+                            Java
+                        </span>
+
+                        <span class="tech-pill">
+                            SMS
+                        </span>
+
+                        <span class="tech-pill">
+                            Device Security
+                        </span>
+
+                        <span class="tech-pill">
+                            Offline
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/halona2005-commits/zeronetcontrol"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </article>
+
+
+                <!-- =================================================
+                     02 — NETFENCE AI
+                ================================================= -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+
+                    <h3>
+                        NetFenceAI
+                    </h3>
+
+
+                    <span class="project-type">
+                        Unisys Innovation Program Hackathon
+                    </span>
+
+
+                    <p>
+                        A full-stack cybersecurity proof-of-concept
+                        designed to detect and analyze suspicious
+                        wireless networks and potential Wi-Fi threats,
+                        combining a mobile interface with a Python
+                        backend.
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech-pill">
+                            Flutter
+                        </span>
+
+                        <span class="tech-pill">
+                            Python
+                        </span>
+
+                        <span class="tech-pill">
+                            Flask
+                        </span>
+
+                        <span class="tech-pill">
+                            AI
+                        </span>
+
+                        <span class="tech-pill">
+                            Cybersecurity
+                        </span>
+
+                        <span class="tech-pill">
+                            Wi-Fi Security
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/csmdg7/NetFenceAI"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </article>
+
+
+                <!-- =================================================
+                     03 — LEGALSAATHI
+                ================================================= -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+
+                    <h3>
+                        LegalSaathi
+                    </h3>
+
+
+                    <span class="project-type">
+                        HiDevs × Mastra AI Agent Builder Hackathon
+                    </span>
+
+
+                    <p>
+                        A multi-agent AI legal assistance system
+                        developed during the HiDevs × Mastra AI
+                        Agent Builder Hackathon, focused on helping
+                        users understand legal information through
+                        an AI-powered experience.
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech-pill">
+                            AI
+                        </span>
+
+                        <span class="tech-pill">
+                            Generative AI
+                        </span>
+
+                        <span class="tech-pill">
+                            AI Agents
+                        </span>
+
+                        <span class="tech-pill">
+                            Python
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/halona2005-commits/LegalSaathi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </article>
+
+
+                <!-- =================================================
+                     04 — OFFLINE QR VERIFICATION
+                ================================================= -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 04
+                    </div>
+
+
+                    <h3>
+                        Offline QR Verification
+                    </h3>
+
+
+                    <span class="project-type">
+                        College-Level Hackathon
+                    </span>
+
+
+                    <p>
+                        A software project focused on QR-based
+                        verification with an offline-first approach,
+                        designed for situations where reliable
+                        internet connectivity is not always available.
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech-pill">
+                            QR
+                        </span>
+
+                        <span class="tech-pill">
+                            Verification
+                        </span>
+
+                        <span class="tech-pill">
+                            Offline System
+                        </span>
+
+                        <span class="tech-pill">
+                            Software Development
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/halona2005-commits/OfflineQRVerification"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </article>
+
+
+                <!-- =================================================
+                     05 — GEMINI PROJECT
+                ================================================= -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 05
+                    </div>
+
+
+                    <h3>
+                        Gemini Project
+                    </h3>
+
+
+                    <span class="project-type">
+                        Hackathon
+                    </span>
+
+
+                    <p>
+                        An AI-focused hackathon project exploring
+                        Gemini and Generative AI capabilities to
+                        build an AI-powered software solution.
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech-pill">
+                            Gemini
+                        </span>
+
+                        <span class="tech-pill">
+                            Generative AI
+                        </span>
+
+                        <span class="tech-pill">
+                            AI
+                        </span>
+
+                        <span class="tech-pill">
+                            Python
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/Haripriya-clou/gemini-project"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </article>
+
+
+                <!-- =================================================
+                     06 — FACE MASK DETECTION
+                ================================================= -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 06
+                    </div>
+
+
+                    <h3>
+                        Face Mask Detection
+                    </h3>
+
+
+                    <span class="project-type">
+                        Virtual Internship
+                    </span>
+
+
+                    <p>
+                        A computer vision and machine learning
+                        project focused on detecting whether a person
+                        is wearing a face mask from image data.
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech-pill">
+                            Python
+                        </span>
+
+                        <span class="tech-pill">
+                            Computer Vision
+                        </span>
+
+                        <span class="tech-pill">
+                            Machine Learning
+                        </span>
+
+                        <span class="tech-pill">
+                            Image Processing
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/halona2005-commits/FaceMaskDetection"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </article>
+
+
+            </div>
+
         </section>
+
+
+        <!-- =====================================================
+             PAGE NAVIGATION
+        ===================================================== -->
+
+        <div class="page-navigation">
+
+
+            <a
+                href="about.html"
+                class="page-nav-link"
+            >
+
+                ← Previous
+
+                <strong>
+                    About
+                </strong>
+
+            </a>
+
+
+            <a
+                href="experience.html"
+                class="page-nav-link"
+                style="text-align: right;"
+            >
+
+                Next
+
+                <strong>
+                    Experience →
+                </strong>
+
+            </a>
+
+
+        </div>
+
     </main>
 
-    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
-    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-header">
-            <h2 id="modal-title" class="modal-title">Project Title</h2>
-            <button class="modal-close" aria-label="Close modal" onclick="closeModal()">×</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-section">
-                <div class="modal-section-title">Architecture Strategy</div>
-                <div id="modal-architecture" class="modal-section-text"></div>
-            </div>
-            <div class="modal-section">
-                <div class="modal-section-title">Challenges Overcome</div>
-                <div id="modal-challenges" class="modal-section-text"></div>
-            </div>
-        </div>
-    </div>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
 
     <footer>
-    <div class="social-links">
-        <a href="https://github.com/halona2005-commits" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-        </a>
 
-        <a href="https://linkedin.com/in/halona-ann-siju" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-        </a>
+        <div class="footer-content">
 
-        <a href="mailto:halona2005@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
 
-    <p>© Halona Ann Siju. All rights reserved.</p>
-</footer>
+            <div>
+                © 2026 Halona Ann Siju
+            </div>
 
-    <script>
-        const projectsData = {
-            'legalsaathi': {
-                title: 'LegalSaathi — AI Legal Aid Agent (HiDevs × Mastra Hackathon)',
-                architecture: 'A layered multi-agent system built on Mastra. A Supervisor Agent receives every user query and delegates to an Intent Router Agent, which classifies intent (scheme, legal, document, or general) and detected language, returning structured JSON. Based on that classification, the query is routed to a specialist: Scheme Agent or Legal Agent, each of which first calls a shared Qdrant search tool against a dedicated collection (government schemes, or IPC/CrPC/BNS and land law) before generating a response, so answers are grounded in retrieved source material rather than the model\'s parametric memory. If no relevant match is found, the agent explicitly says so rather than guessing. Every response passes through Enkrypt AI as an independent safety layer before reaching the user. The backend (Mastra, TypeScript) is deployed on Railway; the frontend (Next.js 16, Tailwind) is deployed on Vercel.',
-                challenges: 'Getting the Intent Router to reliably return clean, parseable JSON (no markdown fences or preamble) required explicit prompt constraints plus a fallback parser that defaults to a general-query classification rather than crashing the pipeline. In production, a browser Web Speech API type error surfaced only under Next.js\'s strict build-time type checking (not local dev), requiring a custom TypeScript declaration file. A leftover duplicate API route that incorrectly imported a backend-only module directly into the frontend caused repeated deployment failures until traced and removed. Gemini\'s free-tier rate limit (20 requests/minute, since each query triggers multiple internal LLM calls for intent classification, embedding, and generation) required careful request pacing during testing and demo recording.'
-            },
-            'qr-system': {
-                title: 'Offline QR Verification System',
-                architecture: 'Decentralized signature processing mapped to a localized JSON schema.',
-                challenges: 'Enforcing data immutability over offline vectors using strict validation check-filters.'
-            },
-            'zeronet': {
-                title: 'ZeroNet Control (Patent App: 202541112551 A)',
-                architecture: 'A hardware-independent, offline security framework that utilizes standard GSM networks to transmit authenticated SMS payloads. Includes a custom command-processing engine designed to handle incoming structural strings without an internet connection stack.',
-                challenges: 'Securing administrative mobile remote access pipelines in zero-connectivity environments, overcoming active network drops through specialized SIM-change monitoring validation rules, and minimizing footprint overhead for background execution on Android.'
-            },
-            'runs-ranker': {
-                title: 'India Runs Ranker',
-                architecture: 'Analytical python array pipelines optimized for sequential data indexing maps.',
-                challenges: 'Scrubbing malformed user data strings through parsing check-filters before execution passes.'
-            },
-            'learning-detection': {
-                title: 'Learning Style Detection',
-                architecture: 'Behavior tracking scoring trees classifying user interaction personas.',
-                challenges: 'Streamlining feature arrays to drastically minimize device memory footprints.'
-            },
-            'facemask-detection': {
-                title: 'Face Mask Detection with Live Alert System',
-                architecture: 'Transfer learning pipeline using a frozen MobileNetV2 base with a custom classification head (Dense + Dropout + Softmax). OpenCV DNN handles per-frame face detection; each cropped face is preprocessed via MobileNetV2 preprocess_input and classified in real time. A Flask backend streams the annotated feed over MJPEG and exposes a JSON stats endpoint polled every second by the dashboard frontend.',
-                challenges: 'MobileNetV2 expects pixel values scaled to -1 to 1 via preprocess_input — using a standard divide-by-255 normalization caused the model to plateau at 50% accuracy, indistinguishable from random guessing. Correcting this single preprocessing step raised accuracy to 99.4%. Also resolved a class-label ordering mismatch between training and evaluation that was silently mapping every prediction to one class.'
-            }
-        };
 
-        function openModal(projectId) {
-            const projectData = projectsData[projectId];
-            if (!projectData) return;
-            document.getElementById('modal-title').textContent = projectData.title;
-            document.getElementById('modal-architecture').textContent = projectData.architecture;
-            document.getElementById('modal-challenges').textContent = projectData.challenges;
-            document.getElementById('project-modal').classList.add('active');
-            document.getElementById('modal-overlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+            <div class="social-links">
 
-        function closeModal() {
-            document.getElementById('project-modal').classList.remove('active');
-            document.getElementById('modal-overlay').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
+                <a
+                    href="https://github.com/halona2005-commits"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+
+                <a
+                    href="https://linkedin.com/in/halona-ann-siju"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+
+                <a href="mailto:halona2005@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
 </body>
 </html>
